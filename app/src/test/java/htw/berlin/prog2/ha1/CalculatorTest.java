@@ -107,36 +107,36 @@ class CalculatorTest {
 
     }
 
-
     @Test
-    @DisplayName("Zahlen dividiert die Zahl 0 ergibt einen Error")
-    void testError() {
+    @DisplayName("bei 1/0 0 eingibt dann Fehler bzw. Error kommt raus")
+    void testDivisionByDotkey() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(0);
         calc.pressUnaryOperationKey("1/x");
 
-        String expected = "Infinity";
+        String expected = "Error";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
 
-
     @Test
-    @DisplayName("Logarithmus naturales von 0 ergibt einen Error")
-    void testLnZero() {
+    @DisplayName("Ln von 0 ergibt einen error")
+    void testlnByZero() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(0);
         calc.pressUnaryOperationKey("ln");
 
-        String expected = "-Infinity";
+        String expected = "Error";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
+
 }
+
 
 
 
