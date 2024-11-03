@@ -90,5 +90,23 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("aus zwei oder mehreren Faktoren werden ein Produkt gebildet")
+    void Multiplication() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(8);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(6);
+        calc.pressEqualsKey();
+
+        String expected = "48";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
 }
+
+
 
